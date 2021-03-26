@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Palautelomake</title>
+</head>
+
+<body>
+    <h1>Täytä lomake</h1>
+    <form action="" method="">
+        <label for="name">Nimi</label>
+        <br><br>
+        <input type="text" name="name">
+        <br><br>
+        <label for="email">Sähköposti</label>
+        <br><br>
+        <input type="email" name="email">
+        <br><br>
+        <label for="message">Palaute</label>
+        <br><br>
+        <textarea name="message" cols="30" rows="5"></textarea>
+        <br><br>
+
+        <label for="like">
+            <input type="radio" id="like" name="rate" value="like">
+            <img src="img/thumb_up.png">
+        </label>
+
+        <label for="dislike">
+            <input type="radio" id="dislike" name="rate" value="dislike">
+            <img src="img/thumb_down.png">
+        </label>
+
+        <br><br>
+        <input type="submit" name="submit">
+    </form>
+</body>
+
+</html>
