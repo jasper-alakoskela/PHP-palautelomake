@@ -12,29 +12,6 @@
     <h1>Palaute</h1>
     <br><hr>
     <?php
-    if (isset($_POST["submit"])) {
-
-        if (empty($_POST["message"])) {
-            echo "<script>location.href='index.php'</script>";
-            return  false;
-        }
-
-        // Muokataan objekti
-        $xml = simplexml_load_file("data.xml");
-        $form = [$_POST["name"], $_POST["email"], $_POST["message"], $_POST["rate"]];
-        $newGuest = $xml -> addChild("feedback");
-        $newGuest -> addChild("name", $form[0]);
-        $newGuest -> addChild("email", $form[1]);
-        $newGuest -> addChild("message", $form[2]);
-        $newGuest -> addChild("rate", $form[3]);
-
-        // Tallennetaan muokattu objekti tiedostoon
-        $dom = new DOMDocument("1.0");
-        $dom -> preserveWhiteSpace = false;
-        $dom -> formatOutput = true;
-        $dom -> loadXML($xml->asXML());
-        $dom -> save("data.xml");
-
         // Näytetään XML objekti sivulla
         $xml = simplexml_load_file("data.xml");
         foreach ($xml->feedback as $feedback) {
@@ -42,9 +19,9 @@
         echo "<p>$feedback->email<p>";
         echo "<p>$feedback->message<p>";
         echo "<img src='$feedback->rate'>";
+        echo "<p style='font-size:small; color:darkgrey;'>$feedback->date</p>";
         echo "<hr>";
         }
-    }   
 ?>
 </body>
 </html>
