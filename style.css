@@ -1,8 +1,22 @@
 body{
-    text-align: center;
-    background-color: rgb(92, 92, 92);
+    background-color: #00539CFF;
     font-size: larger;
     font-family: Arial, Helvetica, sans-serif;
+    color: rgb(66, 66, 66);
+    display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.content {
+  text-align: center;
+  background-color: lightgray;
+  height: 650px;
+  width: 500px;
+  border: 1px black solid;
+  display: grid;
+  justify-content: center;
+  align-content: center;
 }
 
 input{
@@ -34,6 +48,18 @@ img {
     width: 50px;
     height: 50px;
     margin: 10px;
+}
+
+#submit {
+  height: 40px;
+  width: 300px;
+  background-color: #00539CFF;
+  color: lightgray;
+}
+
+h1 {
+  font-size: 32px;
+  color: #EEA47FFF;
 }
 
 /* Radio button */

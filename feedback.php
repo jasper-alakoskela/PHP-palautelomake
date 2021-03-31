@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,7 @@
         echo "<p>$feedback->email<p>";
         echo "<p>$feedback->message<p>";
         echo "<img src='$feedback->rate'>";
-        echo "<p style='font-size:small; color:darkgrey;'>$feedback->date</p>";
+        echo "<p id='date'>$feedback->date</p>";
         echo "<hr>";
         }
 ?>
