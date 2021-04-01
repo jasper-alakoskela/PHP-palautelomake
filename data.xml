@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-
+  <feedback>
+    <name>jasper alakoskela</name>
+    <email>jasper.alakoskela@gmail.com</email>
+    <message>hyvät tuotteet</message>
+    <rate>img/thumb_up.png</rate>
+    <date>2021-04-01</date>
+  </feedback>
 </data>

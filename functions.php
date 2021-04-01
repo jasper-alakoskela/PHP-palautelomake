@@ -4,44 +4,49 @@
     $name = $email = $message = $success = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
         // Validoi nimikenttä
         if (empty($_POST["name"])) {
             $name_err = "Nimi Tarvitaan!";
+            return false;
         }
         else {
             $name = test_inputs($_POST["name"]);
-            if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-                $name_err = "Nimessä Virhe!";
+            if (!preg_match("/^[a-äA-Ä ]*$/",$name)) {
+                $name_err = "Käytä vain aakkosia a-ä, A-Ä!";
+                return false;
             }
         }
         // Validoi sähköpostikenttä
         if (empty($_POST["email"])) {
             $email_err = "Sähköposti Tarvitaan!";
+            return false;
         }
         else {
             $email = test_inputs($_POST["email"]);
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $email_err = "Sähköpostissa Virhe!";
+                return false;
             }
         }
         // Validoi viestikenttä
         if (empty($_POST["message"])) {
             $message_err = "Palaute Tarvitaan!";
+            return false;
         }
         else {
             $message = test_inputs($_POST["message"]);
-            if (!preg_match("/^[a-zA-Z ]*$/",$message)) {
-                $message_err = "Palautteessa Virhe!";
+            if (!preg_match("/^[a-äA-Ä ]*$/",$message)) {
+                $message_err = "Käytä vain aakkosia a-ä, A-Ä";
+                return false;
             }
         }
         // Validoi arvostelu 
         if (!isset($_POST["rate"])) {
             $rate_err = "Valitse Piditkö?!";
+            return false;
         }
         
-            
-        
-
         // Virhe viestien poisto
         if ($name_err == '' && $email_err == '' && $message_err == '' && $rate_err == '') {
             $message_body = '';
