@@ -5,7 +5,35 @@
 
 .succes {
   color: #3500d3; 
-  font-size: 16px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+#submit {
+  height: 40px;
+  width: 300px;
+  background-color: #3500d3;
+  color: white;
+}
+
+#submit:hover {
+  background-color: #240090;
+}
+
+#feedback_link:link, #feedback_link:visited {
+  background-color: #3500d3;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 2px black solid;
+  border-radius: 5px;
+}
+
+#feedback_link:hover, #feedback_link:active {
+  background-color: #240090;
 }
 
 
@@ -22,9 +50,9 @@ body{
 .content {
   text-align: center;
   background-color: #303030;
-  height: 650px;
+  height: 700px;
   width: 500px;
-  border: 1px black solid;
+  border: 5px black solid;
   display: grid;
   justify-content: center;
   align-content: center;
@@ -61,28 +89,7 @@ img {
     margin: 10px;
 }
 
-#submit {
-  height: 40px;
-  width: 300px;
-  background-color: #3500d3;
-  color: white;
-}
 
-#feedback_link {
-  height: 40px;
-  width: 300px;
-  background-color: #3500d3;
-  color: white;
-  border: 2px black solid;
-  border-radius: 5px;
-  font-size: large;
-}
-
-#feedback_link:hover{
-  border: 2px #240090 dashed;
-  border-radius: 5px;
-  
-}
 
 /* Radio button */
 

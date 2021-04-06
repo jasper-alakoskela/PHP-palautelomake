@@ -54,16 +54,15 @@
             foreach ($_POST as $key => $value) {
                 $message_body .= "$key: $value\n";
             }
-            /*
+            
             // Palautteen lähettäminen
-            $to = "palautelomake.vastaanottaja@gmail.com";
-            $subject = "Palautteen lähettäminen";
-            if (mail($to, $subject, $message_body)) {
+            $to = "palautelomake@localhost.com";
+            $subject = "Palaute";
+            $headers = "From: webmaster@example.com" . '\r\n' . "Reply-To: webmaster@example.com" . '\r\n' . "Return-Path: webmaster@example.com";
+            if (mail($to, $subject, $message_body, $headers)) {
                 $success = "Palaute on lähetetty onnistuneesti!";
-                $name = $email = $message = $rate = "";
-
+                $name = $email = $message = "";
             }
-            */
         }
 
         // Muokataan objekti

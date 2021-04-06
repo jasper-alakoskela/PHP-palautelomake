@@ -8,15 +8,15 @@
     <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
         <label for="name">Nimi</label>
         <br><br>
-        <input type="text" name="name" >
+        <input type="text" name="name" value="<?= $name; ?>">
         <br><span class="error"><?= $name_err; ?></span><br>
         <label for="email">Sähköposti</label>
         <br><br>
-        <input type="email" name="email">
+        <input type="email" name="email" value="<?= $email; ?>">
         <br><span class="error"><?= $email_err; ?></span><br>
         <label for="message">Palaute</label>
         <br><br>
-        <textarea name="message" cols="30" rows="5"></textarea>
+        <textarea name="message" cols="30" rows="5" value="<?= $message; ?>"></textarea>
         <br><span class="error"><?= $message_err; ?></span><br>
         <label for="like">
             <input type="radio" id="like" name="rate" value="img/thumb_up.png">
@@ -30,7 +30,8 @@
         <br><span class="error"><?= $rate_err; ?></span><br>
         <input id="submit" type="submit" name="submit">
         <br><br>
-        <button id="feedback_link"><a href="feedback.php"></a>Palautteet</button>
+        <a href="feedback.php" id="feedback_link" target="blank_">Palautteet</a>
+        <br>
         <div class="succes"><?= $success; ?></div>
     </form>
     </div>
