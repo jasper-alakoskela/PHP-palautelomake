@@ -15,6 +15,7 @@
   width: 300px;
   background-color: #3500d3;
   color: white;
+  border: 2px black solid;
 }
 
 #submit:hover {
@@ -24,7 +25,7 @@
 #feedback_link:link, #feedback_link:visited {
   background-color: #3500d3;
   color: white;
-  padding: 10px 110px;
+  padding: 8px 108px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
