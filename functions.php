@@ -47,6 +47,23 @@
             return false;
         }
         
+         // Muokataan objekti
+        $xml = simplexml_load_file("data.xml");
+        $form = [$_POST["name"], $_POST["email"], $_POST["message"], $_POST["rate"], date("Y-m-d")];
+        $newGuest = $xml -> addChild("feedback");
+        $newGuest -> addChild("name", $form[0]);
+        $newGuest -> addChild("email", $form[1]);
+        $newGuest -> addChild("message", $form[2]);
+        $newGuest -> addChild("rate", $form[3]);
+        $newGuest -> addChild("date", $form[4]);
+
+        // Tallennetaan muokattu objekti tiedostoon
+        $dom = new DOMDocument("1.0");
+        $dom -> preserveWhiteSpace = false;
+        $dom -> formatOutput = true;
+        $dom -> loadXML($xml->asXML());
+        $dom -> save("data.xml");
+
         // Virhe viestien poisto
         if ($name_err == '' && $email_err == '' && $message_err == '' && $rate_err == '') {
             $message_body = '';
@@ -57,30 +74,13 @@
             
             // Palautteen lähettäminen
             $to = "palautelomake@localhost.com";
-            $subject = "Palaute";
-            $headers = "From: webmaster@example.com" . '\r\n' . "Reply-To: webmaster@example.com" . '\r\n' . "Return-Path: webmaster@example.com";
+            $subject = "Asiakkaalta palautetta";
+            $headers = "From: Palaute";
             if (mail($to, $subject, $message_body, $headers)) {
                 $success = "Palaute on lähetetty onnistuneesti!";
                 $name = $email = $message = "";
             }
         }
-
-        // Muokataan objekti
-    $xml = simplexml_load_file("data.xml");
-    $form = [$_POST["name"], $_POST["email"], $_POST["message"], $_POST["rate"], date("Y-m-d")];
-    $newGuest = $xml -> addChild("feedback");
-    $newGuest -> addChild("name", $form[0]);
-    $newGuest -> addChild("email", $form[1]);
-    $newGuest -> addChild("message", $form[2]);
-    $newGuest -> addChild("rate", $form[3]);
-    $newGuest -> addChild("date", $form[4]);
-
-    // Tallennetaan muokattu objekti tiedostoon
-    $dom = new DOMDocument("1.0");
-    $dom -> preserveWhiteSpace = false;
-    $dom -> formatOutput = true;
-    $dom -> loadXML($xml->asXML());
-    $dom -> save("data.xml");
          
     }
 
