@@ -1,24 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-  <feedback>
-    <name>jasper alakoskela</name>
-    <email>jasper.alakoskela@gmail.com</email>
-    <message>huono palvelu</message>
-    <rate>img/thumb_down.png</rate>
-    <date>2021-04-08</date>
-  </feedback>
-  <feedback>
-    <name>jasper alakoskela</name>
-    <email>jasper.alakoskela@gmail.com</email>
-    <message>huono palvelu</message>
-    <rate>img/thumb_down.png</rate>
-    <date>2021-04-08</date>
-  </feedback>
-  <feedback>
-    <name>jasper alakoskela</name>
-    <email>jasper.alakoskela@gmail.com</email>
-    <message>hyvä palvelu</message>
-    <rate>img/thumb_up.png</rate>
-    <date>2021-04-08</date>
-  </feedback>
+
 </data>
